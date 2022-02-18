@@ -7,6 +7,7 @@ import { useSpring, useTrail, animated, config } from '@react-spring/web'
 import {
   useWindowSize,
 } from '@react-hook/window-size/throttled'
+import { GTM_ID } from '../lib/gtm'
 // import runAnime from '../assets/animate'
 const fast = { tension: 1200, friction: 40 }
 const slow = { mass: 10, tension: 200, friction: 50 }
@@ -42,7 +43,14 @@ const Home: NextPage = () => {
         <meta name="description" content="This is Davidmood.eth. I Design, Develope, Sing and Code." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
+        />
+      </noscript>
       
       <main className={styles.main}>
       
