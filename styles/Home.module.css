@@ -29,20 +29,45 @@
 }
 
 .title a {
-  color: #0070f3;
+  /* color: #0070f3; */
   text-decoration: none;
+  background:
+    linear-gradient(
+      to right,
+      rgba(3, 191, 172, 1),
+      rgba(95, 204, 216, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(22, 32, 38, 1),
+      rgba(2, 114, 114, 1),
+      rgba(3, 191, 156, 1)
+  );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
 }
 
 .title a:hover,
 .title a:focus,
 .title a:active {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  background-size: 0 3px, 100% 3px;
 }
 
 .title {
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  position: relative;
+  width: 100%;
+  height: 80px;
+  color: black;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  will-change: transform, opacity;
+  overflow: hidden;
 }
 
 .title,
@@ -83,14 +108,32 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+  background:
+  linear-gradient(
+    to right,
+    rgba(3, 191, 172, 1),
+    rgba(95, 204, 216, 1)
+  ),
+  linear-gradient(
+    to right,
+    rgba(22, 32, 38, 1),
+    rgba(2, 114, 114, 1),
+    rgba(3, 191, 156, 1)
+  );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: rgba(22, 32, 38, 1);
+  border-color: rgba(22, 32, 38, 1);
+  background-size: 0 3px, 100% 3px;
 }
+
 
 .card h2 {
   margin: 0 0 1rem 0;
@@ -113,4 +156,105 @@
     width: 100%;
     flex-direction: column;
   }
+  .card {
+    color: rgba(22, 32, 38, 1);
+    border-color: rgba(22, 32, 38, 1);
+    background-size: 0 3px, 100% 3px;
+  }
+  .card:hover {
+    background-size: 100% 3px, 0 3px;
+  }
+}
+@media (max-width: 450px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 380px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+.hooksMain > div {
+  position: absolute;
+  will-change: transform;
+  border-radius: 50%;
+  background: #5FCDD9;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  opacity: 0.6;
+}
+
+.hooksMain > div:nth-child(1) {
+  width: 60px;
+  height: 60px;
+}
+
+.hooksMain > div:nth-child(2) {
+  width: 125px;
+  height: 125px;
+}
+
+.hooksMain > div:nth-child(3) {
+  width: 75px;
+  height: 75px;
+}
+
+.hooksMain > div::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.hooksMain > div:nth-child(2)::after {
+  top: 35px;
+  left: 35px;
+  width: 35px;
+  height: 35px;
+}
+
+.hooksMain > div:nth-child(3)::after {
+  top: 25px;
+  left: 25px;
+  width: 25px;
+  height: 25px;
+}
+
+.hooksMain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: url('#goo');
+  overflow: hidden;
+  background: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.trailsText {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  color: black;
+  font-size: 3em;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+
+.trailsText > div {
+  padding-right: 0.05em;
+  overflow: hidden;
 }
